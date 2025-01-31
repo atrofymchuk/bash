@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Перевірка наявності аргументу командного рядка
+# Here we check if the argument of comand line exist
 if [ $# -ne 1 ]; then
     echo "Usage: $0 <input_file>"
     exit 1
@@ -8,23 +8,23 @@ fi
 
 input_file="$1"
 
-# Перевірка наявності вхідного файлу
+# Cheking if input file exist
 if [ ! -f "$input_file" ]; then
     echo "File '$input_file' not found!"
     exit 1
 fi
 
-# Створення директорії для збереження файлів
+# Creating the directory for saving files
 mkdir -p output_files
 
-# Зчитування кожного рядка з вхідного файлу
+# Reading each line from input file
 while IFS= read -r line; do
-    # Отримання першої літери рядка
+    # Getting the first letter of line
     first_letter="${line:0:1}"
 
-    # Створення директорії на основі першої літери, якщо вона не існує
+    # Creating folder based on first letter, if the one doesn't exist
     mkdir -p "output_files/$first_letter"
 
-    # Запис рядка у файл у відповідну директорію
+    # Writing line to file to the proper folder
     echo "$line" > "output_files/$first_letter/$line.txt"
 done < "$input_file"
