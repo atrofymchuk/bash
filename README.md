@@ -1,1 +1,1 @@
-Here is my collection of bash script
+Here is my collection of bash scripts
