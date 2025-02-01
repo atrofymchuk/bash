@@ -2,6 +2,7 @@ This This script reads each line of the file and writes each of them to a separa
 
 Use the next construction to run this script:
 
-`chmod +x input.sh`
-
-`input.sh text.xt`
+```
+chmod +x input.sh
+input.sh text.xt
+```
